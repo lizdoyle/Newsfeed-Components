@@ -22,8 +22,6 @@ class Article {
     // this.expandButton.classList.toggle(".close");
     // this.expandButton.classList.toggle(".article");
 
-
-
   }
 }
 
@@ -39,7 +37,6 @@ let articles = document.querySelectorAll(".article");
 // let article = document.querySelectorAll(".article");
 // let openArticle = document.querySelectorAll(".article-open");
 // let closeArticle = document.querySelectorAll(".close");
-
 
 
 articles.forEach(item => {
