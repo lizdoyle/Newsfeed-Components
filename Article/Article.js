@@ -125,6 +125,13 @@ const thirdP = document.createElement('p');
 const button = document.createElement('span');
 
 
+articleTitle.classList.add('h2');
+articleDate.classList.add('date');
+firstP.classList.add('p');
+secondP.classList.add('p');
+thirdP.classList.add('p');
+button.textContent = "expand";
+
 article.appendChild(articleTitle);
 article.appendChild(articleDate);
 article.appendChild(firstP);
@@ -132,18 +139,25 @@ article.appendChild(secondP);
 article.appendChild(thirdP);
 article.appendChild(button);
 
+
+
+article.classList.add('article');
+
+button.addEventListener('click', () => {
+    button.classList.toggle('article-open');
+
+});
+
 return article;
 };
 
 const articles = document.querySelector('.articles');
 articles.appendChild(createArticle());
-console.log(articles);
 
 
-// data.map((article) => {
-//     const newArticleObject = new Articles (
-//       createNewArticle(),
-//       article.title,
-//       article.date
-//     );
+
+// data.map((data) => {
+
+//      return createNewArticle(data),
+      
 // });
