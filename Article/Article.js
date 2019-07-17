@@ -112,3 +112,38 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 */
+
+class Articles {
+
+    constructor(article, title, date) {
+      this.isOpen = false;
+      const articleTitle = article.querySelector('h2');
+      articleTitle.textContent = title;
+
+
+
+
+    }
+
+    expandButton() {
+      this.isOpen = !this.isOpen;
+      if (!this.isOpen) {
+        this.articleButton.textContent = "Open";
+      }
+      else {
+        this.articleButton.textContent = "Close"'
+      }
+    }
+}
+
+// const createNewArticle = () => {
+
+// }
+
+// data.map((article) => {
+//     const newArticleObject = new Articles (
+//       createNewArticle(),
+//       article.title,
+//       article.date
+//     );
+// });
