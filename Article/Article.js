@@ -113,56 +113,36 @@ const data = [
 
 */
 
-class Articles {
-
-    constructor(article, title, date) {
-      this.isOpen = false;
-      const articleTitle = article.querySelector('h2');
-      articleTitle.textContent = title;
 
 
+function createArticle() {
+const article = document.createElement('div');
+const articleTitle = document.createElement('h2');
+const articleDate = document.createElement('p');
+const firstP = document.createElement('p');
+const secondP = document.createElement('p');
+const thirdP = document.createElement('p');
+const button = document.createElement('button');
+
+article.appendChild(articleTitle);
+article.appendChild(articleDate);
+article.appendChild(firstP);
+article.appendChild(secondP);
+article.appendChild(thirdP);
+article.appendChild(button);
 
 
-    }
-
-    expandButton() {
-      this.isOpen = !this.isOpen;
-      if (!this.isOpen) {
-        this.articleButton.textContent = "Open";
-      }
-      else {
-        this.articleButton.textContent = "Close"'
-      }
-    }
-}
-
-const createNewArticle = () => {
-const articles = document.querySelector('.articles');
-const article = document.querySelector('.article');
-const title = document.querySelector('.h2');
-const date = document.querySelector('.date');
 
 
-// <div class="article">
-const newArticle = document.createElement('.div');
-//<h2>{title of the article}</h2>
-const articleTitle = document.createElement('.h2');
 
-/* <p class="date">{date of the article}</p> */
-
-    // {three separate paragraph elements}
-
-    // <span class='expandButton'></span>
-  // </div>
+};
 
 
-  parent.appendChild(articles);
-}
 
-// data.map((article) => {
-//     const newArticleObject = new Articles (
-//       createNewArticle(),
-//       article.title,
-//       article.date
-//     );
-// });
+data.map((article) => {
+    const newArticleObject = new Articles (
+      createNewArticle(),
+      article.title,
+      article.date
+    );
+});
