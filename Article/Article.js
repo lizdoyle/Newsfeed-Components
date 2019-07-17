@@ -122,7 +122,8 @@ const articleDate = document.createElement('p');
 const firstP = document.createElement('p');
 const secondP = document.createElement('p');
 const thirdP = document.createElement('p');
-const button = document.createElement('button');
+const button = document.createElement('span');
+
 
 article.appendChild(articleTitle);
 article.appendChild(articleDate);
@@ -131,18 +132,18 @@ article.appendChild(secondP);
 article.appendChild(thirdP);
 article.appendChild(button);
 
-
-
-
-
+return article;
 };
 
+const articles = document.querySelector('.articles');
+articles.appendChild(createArticle());
+console.log(articles);
 
 
-data.map((article) => {
-    const newArticleObject = new Articles (
-      createNewArticle(),
-      article.title,
-      article.date
-    );
-});
+// data.map((article) => {
+//     const newArticleObject = new Articles (
+//       createNewArticle(),
+//       article.title,
+//       article.date
+//     );
+// });
