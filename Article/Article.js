@@ -136,9 +136,28 @@ class Articles {
     }
 }
 
-// const createNewArticle = () => {
+const createNewArticle = () => {
+const articles = document.querySelector('.articles');
+const article = document.querySelector('.article');
+const title = document.querySelector('.h2');
+const date = document.querySelector('.date');
 
-// }
+
+// <div class="article">
+const newArticle = document.createElement('.div');
+//<h2>{title of the article}</h2>
+const articleTitle = document.createElement('.h2');
+
+/* <p class="date">{date of the article}</p> */
+
+    // {three separate paragraph elements}
+
+    // <span class='expandButton'></span>
+  // </div>
+
+
+  parent.appendChild(articles);
+}
 
 // data.map((article) => {
 //     const newArticleObject = new Articles (
