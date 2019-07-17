@@ -113,10 +113,26 @@ const data = [
 
 */
 
+class Articles {
+  constructor(article) {
+    this.article = article;
+    this.articleDiv = document.querySelector('.articles');
+    this.createArticle();
+
+    this.openButton = document.querySelector('.expandButton')
+    this.openButton.addEventListener('click', () => {
+      this.toggleButton();
+    })
+
+  }
+  toggleButton() {
+
+  }
+}
 
 
-function createArticle() {
-const article = document.createElement('div');
+const createNewArticle = () => {
+const newArticle = document.createElement('div');
 const articleTitle = document.createElement('h2');
 const articleDate = document.createElement('p');
 const firstP = document.createElement('p');
@@ -124,12 +140,14 @@ const secondP = document.createElement('p');
 const thirdP = document.createElement('p');
 const button = document.createElement('span');
 
-
+newArticle.classList.add('article');
 articleTitle.classList.add('h2');
 articleDate.classList.add('date');
 firstP.classList.add('p');
 secondP.classList.add('p');
 thirdP.classList.add('p');
+
+articleTitle.textContent = ;
 button.textContent = "expand";
 
 article.appendChild(articleTitle);
@@ -141,10 +159,11 @@ article.appendChild(button);
 
 
 
-article.classList.add('article');
+
 
 button.addEventListener('click', () => {
-    button.classList.toggle('article-open');
+  
+    article.classList.toggle('article-open');
 
 });
 
@@ -156,8 +175,8 @@ articles.appendChild(createArticle());
 
 
 
-// data.map((data) => {
-
-//      return createNewArticle(data),
+data.map((item) => {
+    let newArticle = createArticle(item);
+    parent.appendChild(newArticle);
       
-// });
+});
