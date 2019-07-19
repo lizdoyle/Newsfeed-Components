@@ -1,13 +1,13 @@
 // /* This is the data we will be using, study it but don't change anything, yet. */
 
-// let menuItems = [
-//   'Students',
-//   'Faculty',
-//   "What's New",
-//   'Tech Trends',
-//   'Music',
-//   'Log Out'
-// ];
+let menuItems = [
+  'Students',
+  'Faculty',
+  "What's New",
+  'Tech Trends',
+  'Music',
+  'Log Out'
+];
 
 // /* 
 
@@ -34,42 +34,46 @@
   
 // */
 
-// // class Item  {
-// //   constructor(item) {
-// //     this.item = item;
+// class Item  {
+//   constructor(item) {
+//     this.item = item;
 
-// //     const listItem = document.createElement('.li');
+//     const listItem = document.createElement('.li');
 
-// //   }
-
-// // }
-
-// function menuCreator(menuItem) {
-
-// const menu = document.createElement('div');
-
-// menu.textContent = menuItems;
-
-// menu.classList.add('.li');
-
-// return menu;
+//   }
 
 // }
 
+function menuCreator(menuItems) {
+
+const menu = document.createElement('div');
+const ul = document.createElement('ul');
+
+
+menuItems.forEach((item) => {
+    let li = document.createElement('li');
+    li.textContent = item;
+    ul.appendChild(li);
+});
+
+
+menu.appendChild(ul);
 
 
 
+return menu;
 
-// const createNewItem = () => {
-
-
-// }
+}
 
 
+const nav = document.querySelector('body');
+nav.appendChild(menuCreator(menuItems));
 
-// menuItems.Map((item) => {
-//     let newItem = menuCreator(item);
 
-//     parent.appendChild(newMenu);
 
-// });
+// menuItems.forEach((item) => {
+ menuCreator(menuItems);
+    
+
+    parent.appendChild(newMenu);
+

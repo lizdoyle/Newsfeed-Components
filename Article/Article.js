@@ -116,45 +116,55 @@ const data = [
 
 
 function createNewArticle(data){
+
 const newArticle = document.createElement('div');
+newArticle.classList.add('article');
+
+
 const articleTitle = document.createElement('h2');
 const articleDate = document.createElement('p');
 const firstP = document.createElement('p');
 const secondP = document.createElement('p');
 const thirdP = document.createElement('p');
+
+articleTitle.textContent = data.title;
+articleDate.textContent = data.date;
+firstP.textContent = data.firstParagraph;
+secondP.textContent = data.secondParagraph;
+thirdP.textContent = data.thirdParagraph;
+
+newArticle.classList.add('h2');
+newArticle.classList.add('date');
+newArticle.classList.add('p');
+newArticle.classList.add('p');
+newArticle.classList.add('p');
+
+
+
+
 const button = document.createElement('span');
-
-newArticle.classList.add('article');
-articleTitle.classList.add('h2');
-articleDate.classList.add('date');
-firstP.classList.add('p');
-secondP.classList.add('p');
-thirdP.classList.add('p');
-button.classList.add('span');
+button.classList.add('expandButton');
 button.textContent = "Expand";
-
-
 button.addEventListener('click', () => {
-    article.classList.toggle('article-open');
+    newArticle.classList.toggle('article-open');
 
 });
 
-article.appendChild(articleTitle);
-article.appendChild(articleDate);
-article.appendChild(firstP);
-article.appendChild(secondP);
-article.appendChild(thirdP);
-article.appendChild(button);
+newArticle.appendChild(articleTitle);
+newArticle.appendChild(articleDate);
+newArticle.appendChild(firstP);
+newArticle.appendChild(secondP);
+newArticle.appendChild(thirdP);
+newArticle.appendChild(button);
 
 
-return article;
+return newArticle;
 };
 
 const articles = document.querySelector('.articles');
 
-
-data.map( item => {
-    const newArticle = createArticle(item);
-    articles.appendChild(newArticle);
+const newComponent = data.map( item => {
+    
+    articles.appendChild(createNewArticle(item));
       
 });
