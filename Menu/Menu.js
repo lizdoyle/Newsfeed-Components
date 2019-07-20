@@ -41,7 +41,7 @@ let menuItems = [
 //     const listItem = document.createElement('.li');
 
 //   }
-
+ 
 // }
 
 function menuCreator(menuItems) {
@@ -57,6 +57,12 @@ menuItems.forEach((item) => {
 });
 
 
+const menuButton = document.querySelector('img');
+menuButton.classList.add('menu-button');
+menu.addEventListener('click', () => {
+  menu.classList.toggle('menu--open');
+})
+
 menu.appendChild(ul);
 
 
@@ -68,6 +74,9 @@ return menu;
 
 const nav = document.querySelector('body');
 nav.appendChild(menuCreator(menuItems));
+
+const menuButton = document.querySelector('menu-button');
+menuButton.classList.add('menu--open');
 
 
 
